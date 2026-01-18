@@ -3,33 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategic Consulting Group</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Strategic Consulting | Professional Services</title>
+    <style>
+        /* --- YOUR CSS START --- */
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --white: #ffffff;
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Inter', -apple-system, sans-serif; 
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body { 
+            color: var(--text-dark); 
+            line-height: 1.6; 
+            background-color: #f8fafc;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .navbar .logo { font-weight: 700; font-size: 1.5rem; color: var(--white); }
+        .navbar .logo span { color: #d1d8ff; font-weight: 400; }
+
+        .nav-links { display: flex; list-style: none; align-items: center; }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a { text-decoration: none; color: var(--white); font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { opacity: 0.8; }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px; opacity: 0.9; }
+
+        /* Buttons */
+        .btn-main {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--white);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+        /* Services */
+        .services { padding: 100px 10%; background: #f8fafc; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--text-dark); margin-bottom: 10px; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+            transition: 0.3s;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+        .card h3 { margin-bottom: 15px; color: var(--primary); }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .navbar { padding: 15px 5%; }
+        }
+        /* --- YOUR CSS END --- */
+    </style>
 </head>
 <body>
+
     <nav class="navbar">
         <div class="logo">Strategic <span>Consulting</span></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#contact" class="btn-nav">Contact</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <header id="home" class="hero">
+    <section id="home" class="hero">
         <div class="hero-content">
             <h1>Transform Your Business <br>with Strategic Excellence</h1>
             <p>We help companies achieve sustainable growth through data-driven strategies, innovative solutions, and expert guidance.</p>
-            <a href="#contact" class="btn-main">Get Started</a>
+            <a href="#services" class="btn-main">Get Started</a>
         </div>
-    </header>
+    </section>
 
     <section id="services" class="services">
         <div class="section-header">
             <h2>Our Services</h2>
             <p>Expertise tailored to your business needs</p>
         </div>
+        
         <div class="services-grid">
             <div class="card">
                 <h3>Strategic Planning</h3>
@@ -46,42 +156,5 @@
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
-        <div class="contact-container">
-            <h2>Get In Touch</h2>
-            <p>Let's discuss how we can help transform your business.</p>
-            <form id="consultingForm">
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-                <input type="text" id="company" name="company" placeholder="Company Name">
-                <textarea id="message" name="message" placeholder="Your Message" rows="5"></textarea>
-                <button type="submit" class="btn-main">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <section id="feedback" class="contact-section" style="background: #f1f5f9; border-top: 1px solid #e2e8f0;">
-        <div class="contact-container">
-            <h2>Website Feedback</h2>
-            <p>Help us improve by sharing your thoughts.</p>
-            <form id="feedbackForm" style="display: flex; flex-direction: column; gap: 15px; margin-top: 30px;">
-                <select id="rating" style="padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 1rem;">
-                    <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
-                    <option value="4">⭐⭐⭐⭐ Very Good</option>
-                    <option value="3">⭐⭐⭐ Average</option>
-                    <option value="2">⭐⭐ Poor</option>
-                    <option value="1">⭐ Very Poor</option>
-                </select>
-                <textarea id="feedbackText" placeholder="What did you think of our site?" rows="3" style="padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 1rem;"></textarea>
-                <button type="submit" class="btn-main" style="background: var(--secondary); color: white;">Download Feedback (.txt)</button>
-            </form>
-        </div>
-    </section>
-
-    <div style="text-align: center; padding: 50px 0; background: #f8fafc;">
-        <button id="submitBtn" class="btn-main" style="background: var(--primary); color: white;">Clear Page</button>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
