@@ -11,14 +11,23 @@
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
-    font-family: 'Inter', sans-serif; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
 html { scroll-behavior: smooth; }
 
-body { color: var(--text-dark); line-height: 1.6; }
+body { 
+    color: var(--text-dark); 
+    line-height: 1.6; 
+    background-color: var(--white);
+}
 
-/* Navbar */
+/* --- SAFETY FALLBACKS (In case classes are missed) --- */
+header, nav { background: var(--primary); padding: 10px; }
+a { text-decoration: none; }
+ul { list-style: none; }
+
+/* --- Navbar --- */
 .navbar {
     position: fixed;
     top: 0;
@@ -29,6 +38,7 @@ body { color: var(--text-dark); line-height: 1.6; }
     padding: 20px 10%;
     transition: all 0.3s ease;
     z-index: 1000;
+    background: linear-gradient(to right, var(--primary), var(--secondary)); /* Added background for visibility */
 }
 
 .navbar .logo { font-weight: 700; font-size: 1.5rem; color: var(--white); }
@@ -37,24 +47,26 @@ body { color: var(--text-dark); line-height: 1.6; }
 .nav-links { display: flex; list-style: none; align-items: center; }
 .nav-links li { margin-left: 30px; }
 .nav-links a { text-decoration: none; color: var(--white); font-weight: 500; transition: 0.3s; }
+.nav-links a:hover { opacity: 0.8; }
 
-/* Hero Section */
+/* --- Hero Section --- */
 .hero {
-    height: 100vh;
+    min-height: 100vh; /* Changed to min-height for better mobile scaling */
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     text-align: center;
-    padding: 0 20px;
+    padding: 80px 20px 20px; /* Added top padding so content isn't under the navbar */
 }
 
 .hero h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; }
 .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px; opacity: 0.9; }
 
-/* Buttons */
+/* --- Buttons --- */
 .btn-main {
+    display: inline-block; /* Essential for padding to work on <a> tags */
     padding: 15px 40px;
     background: var(--white);
     color: var(--primary);
@@ -68,10 +80,10 @@ body { color: var(--text-dark); line-height: 1.6; }
 
 .btn-main:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
 
-/* Services */
+/* --- Services --- */
 .services { padding: 100px 10%; background: #f8fafc; }
 .section-header { text-align: center; margin-bottom: 50px; }
-.section-header h2 { font-size: 2.5rem; color: var(--text-dark); }
+.section-header h2 { font-size: 2.5rem; color: var(--text-dark); margin-bottom: 10px; }
 
 .services-grid {
     display: grid;
@@ -90,21 +102,9 @@ body { color: var(--text-dark); line-height: 1.6; }
 .card:hover { transform: translateY(-10px); }
 .card h3 { margin-bottom: 15px; color: var(--primary); }
 
-/* Contact Form */
-.contact-section { padding: 100px 10%; text-align: center; }
-.contact-container { max-width: 600px; margin: 0 auto; }
-
-#consultingForm { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
-#consultingForm input, #consultingForm textarea {
-    padding: 15px;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    font-size: 1rem;
-}
-
-/* Mobile Responsive */
+/* --- Mobile Responsive --- */
 @media (max-width: 768px) {
-    .nav-links { display: none; }
+    .nav-links { display: none; } /* Consider adding a mobile menu icon later */
     .hero h1 { font-size: 2.2rem; }
     .navbar { padding: 15px 5%; }
 }
