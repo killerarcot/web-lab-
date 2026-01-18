@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Consulting Group</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Strategic <span>Consulting</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact" class="btn-nav">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Business <br>with Strategic Excellence</h1>
+            <p>We help companies achieve sustainable growth through data-driven strategies, innovative solutions, and expert guidance.</p>
+            <a href="#contact" class="btn-main">Get Started</a>
+        </div>
+    </header>
+
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>Expertise tailored to your business needs</p>
+        </div>
+        <div class="services-grid">
+            <div class="card">
+                <h3>Strategic Planning</h3>
+                <p>Develop comprehensive business strategies that align with your vision and market demands.</p>
+            </div>
+            <div class="card">
+                <h3>Digital Transformation</h3>
+                <p>Modernize your operations with cutting-edge technology and seamless digital workflows.</p>
+            </div>
+            <div class="card">
+                <h3>Financial Advisory</h3>
+                <p>Optimize your financial performance with expert analysis and sustainable growth models.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2>Get In Touch</h2>
+            <p>Let's discuss how we can help transform your business.</p>
+            <form id="consultingForm">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <input type="text" id="company" name="company" placeholder="Company Name">
+                <textarea id="message" name="message" placeholder="Your Message" rows="5"></textarea>
+                <button type="submit" class="btn-main">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="feedback" class="contact-section" style="background: #f1f5f9; border-top: 1px solid #e2e8f0;">
+        <div class="contact-container">
+            <h2>Website Feedback</h2>
+            <p>Help us improve by sharing your thoughts.</p>
+            <form id="feedbackForm" style="display: flex; flex-direction: column; gap: 15px; margin-top: 30px;">
+                <select id="rating" style="padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 1rem;">
+                    <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                    <option value="4">⭐⭐⭐⭐ Very Good</option>
+                    <option value="3">⭐⭐⭐ Average</option>
+                    <option value="2">⭐⭐ Poor</option>
+                    <option value="1">⭐ Very Poor</option>
+                </select>
+                <textarea id="feedbackText" placeholder="What did you think of our site?" rows="3" style="padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 1rem;"></textarea>
+                <button type="submit" class="btn-main" style="background: var(--secondary); color: white;">Download Feedback (.txt)</button>
+            </form>
+        </div>
+    </section>
+
+    <div style="text-align: center; padding: 50px 0; background: #f8fafc;">
+        <button id="submitBtn" class="btn-main" style="background: var(--primary); color: white;">Clear Page</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
